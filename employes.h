@@ -35,13 +35,14 @@ public:
     bool supprimerEmployes(int);
     bool modifierEmployes ();
 
+
     //Métiers
     QSqlQueryModel * AfficherTrieCIN();
     QSqlQueryModel * AfficherTrieNom();
 
     QSqlQueryModel * rechercherCIN(QString);
     QSqlQueryModel * rechercherNom(QString);
-
+    QString  apercu_pdf();
 
 private:
     int cin;

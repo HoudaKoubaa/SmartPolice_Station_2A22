@@ -215,132 +215,6 @@ QPushButton:hover
        </rect>
       </property>
      </widget>
-     <widget class="QCalendarWidget" name="meetingsCalendar">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>200</y>
-        <width>311</width>
-        <height>231</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QDoubleSpinBox,
-QCalendarWidget QSpinBox 
-{
-	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(70, 70, 70, 255),stop:1 rgba(3, 2, 5, 255));
-	color : #fff;
-	border: 1px solid #1d1d1d;
-	padding: 3px;
-	padding-left: 5px;
-
-}
-
-
-QDoubleSpinBox::up-button, 
-QCalendarWidget QSpinBox::up-button
-{
-	background-color: #4a5157;
-    width: 16px; 
-    border-width: 1px;
-	border-color: #1d1d1d;
-
-}
-
-
-QDoubleSpinBox::up-button:hover, 
-QCalendarWidget QSpinBox::up-button:hover
-{
-	background-color: #585858;
-
-}
-
-
-QDoubleSpinBox::up-button:pressed, 
-QCalendarWidget QSpinBox::up-button:pressed
-{
-	background-color: #252525;
-    width: 16px; 
-    border-width: 1px;
-
-}
-
-
-QDoubleSpinBox::up-arrow,
-QCalendarWidget QSpinBox::up-arrow
-{
-    image: url(://arrow-up.png);
-    width: 7px;
-    height: 7px;
-
-}
-
-
-QDoubleSpinBox::down-button, 
-QCalendarWidget QSpinBox::down-button
-{
-	background-color: #4a5157;
-    width: 16px; 
-    border-width: 1px;
-	border-color: #1d1d1d;
-
-}
-
-
-QDoubleSpinBox::down-button:hover, 
-QCalendarWidget QSpinBox::down-button:hover
-{
-	background-color: #585858;
-
-}
-
-
-QDoubleSpinBox::down-button:pressed, 
-QCalendarWidget QSpinBox::down-button:pressed
-{
-	background-color: #252525;
-    width: 16px; 
-    border-width: 1px;
-
-}
-
-
-QDoubleSpinBox::down-arrow,
-QCalendarWidget QSpinBox::down-arrow
-{
-    image: url(://arrow-down.png);
-    width: 7px;
-    height: 7px;
-
-}
-
-
-/*-----QGroupBox-----*/
-QGroupBox 
-{
-	background-color: #640000;
-    border: 1px solid;
-    border-color: #410d12;
-    margin-top: 23px;
-
-}
-
-
-QGroupBox::title  
-{
-    background-color: #640000;
-    color: #fff;
-	subcontrol-position: top left;
-    subcontrol-origin: margin;
-    padding: 5px;
-	min-width: 100px;
-	border: 1px solid #410d12;
-	border-bottom: none;
-
-}
-</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="styleEdit">
       <property name="enabled">
        <bool>false</bool>
@@ -906,17 +780,27 @@ QHeaderView::section:vertical
 </string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="Impdos_2">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>102</y>
-        <width>101</width>
+        <x>130</x>
+        <y>150</y>
+        <width>111</width>
         <height>31</height>
        </rect>
       </property>
       <property name="text">
        <string>imprimer</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="imp">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>210</y>
+        <width>321</width>
+        <height>231</height>
+       </rect>
       </property>
      </widget>
      <zorder>styleEdit</zorder>
@@ -932,7 +816,6 @@ QHeaderView::section:vertical
      <zorder>label_6</zorder>
      <zorder>Lenom</zorder>
      <zorder>LeIdRT</zorder>
-     <zorder>meetingsCalendar</zorder>
      <zorder>Statistiques</zorder>
      <zorder>calendrier</zorder>
      <zorder>lemdp</zorder>
@@ -947,7 +830,8 @@ QHeaderView::section:vertical
      <zorder>LeId</zorder>
      <zorder>dateEdit</zorder>
      <zorder>tableView</zorder>
-     <zorder>pushButton_3</zorder>
+     <zorder>Impdos_2</zorder>
+     <zorder>imp</zorder>
     </widget>
     <widget class="QWidget" name="page_2">
      <widget class="QPushButton" name="Statistiques_2">

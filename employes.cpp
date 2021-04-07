@@ -199,3 +199,34 @@ QSqlQueryModel * Employes::rechercherNom(QString nom)
 
 }
 
+QString Employes:: apercu_pdf()
+ {
+    QString text="          **** Les employes  ****      \n \n " ;
+     QSqlQuery query ;
+     QString i,x,z,a,b,c,d,h,h1,h2,h3;
+
+
+      query.exec("select * from employes left join conge on conge.cin_emp=employes.cin_emp ");
+      while (query.next())
+      {
+         i=query.value(0).toString();
+         x=query.value(1).toString();
+         z=query.value(2).toString();
+         a=query.value(3).toString();
+         b=query.value(4).toString();
+         c=query.value(5).toString();
+         d=query.value(6).toString();
+         h=query.value(7).toString();
+         h1=query.value(8).toString();
+         h2=query.value(9).toString();
+         h3=query.value(10).toString();
+
+
+        text += "\n Employe Id : "+i+"\n\n - Nom : "+ x+"\n - prenom : "+ z+"\n - grade:"+a+"\n - date_naissance :"+b+"\n - mot_de_passe : "+c+"\n - email:"+d+"_______\n\n Conge Id:"+h+"\n" "\n -Id conge:"+h1+"\n" " -Debut conge:"+h2+"\n" " -Fin conge:"+h3+"\n"  ;
+
+
+     }
+
+             return text ;
+ }
+

@@ -44,6 +44,7 @@ private slots:
     void on_tableView_clicked(const QModelIndex &index);
 
 
+    void on_Impdos_2_clicked();
 
 private:
     Ui::MainWindow *ui;

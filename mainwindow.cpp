@@ -5,6 +5,8 @@
 #include <QMessageBox>
 #include "connection.h"
 #include<QDebug>
+#include <QPrinter>
+#include <QPrintDialog>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -172,5 +174,20 @@ void MainWindow::on_tableView_activated(const QModelIndex &index)
 void MainWindow::on_tableView_clicked(const QModelIndex &index)
 {
     id_emp=ui->tableView->model()->data(index).toInt();
+}
+
+
+void MainWindow::on_Impdos_2_clicked()
+{
+    Employes c;
+
+                 QString text=c.apercu_pdf();
+                 ui->imp->setText(text);
+
+                 QPrinter printer ;
+                 printer.setPrinterName("imprim");
+                 QPrintDialog dialog (&printer,this);
+                 if(dialog.exec()==QDialog::Rejected) return ;
+                 ui->imp->print(&printer);
 }
 
