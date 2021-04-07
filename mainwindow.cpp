@@ -24,6 +24,36 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+bool MainWindow::controleVide(QString test)
+{
+    if(test!="")
+        return  true;
+    return false;
+
+}
+
+bool MainWindow::controleVideInt(int test)
+{
+    if(test!=0)
+        return  true;
+    return false;
+
+}
+
+bool MainWindow::controleEmail(QString test)
+{
+    for(int i=0;i<test.length();i++)
+    {
+        if (test.at(i)=='@')
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+
 void MainWindow::update_id()
 {
 
@@ -47,6 +77,8 @@ void MainWindow::on_pushButtonAjouter_clicked()
       QString mdp=ui->lemdp->text();
       QString email=ui->leemail->text();
 
+      bool test2;
+          test2=(controleEmail(email)&&controleVide(nom)&&controleVide(prenom)&&controleVide(mdp)&&controleVide(email)&&controleVideInt(id) );
 
       //instancier un objet de la classe Etudiant en utilisant les informations saisies dans l interfaces
       Employes E(id,nom,prenom,grade,date,mdp,email);
@@ -54,6 +86,7 @@ void MainWindow::on_pushButtonAjouter_clicked()
       //insérer l'objet etudiant instancié dans la table etudiant et recuperer la valeur de retour de query.exec();
 
       bool test =E.ajouterEmployes();
+if (test2){
 
       if(test)//si requête executée ==>QMessageBox::information
       {
@@ -66,7 +99,16 @@ void MainWindow::on_pushButtonAjouter_clicked()
 
       else //si requête non exécutée ==>QMessageBox::critical
           QMessageBox::critical(nullptr,QObject::tr("Not Ok"),
-                                QObject::tr("Ajout non effectué. \n ""Click Cancel to exit."),QMessageBox::Cancel);
+                                QObject::tr("Ajout non effectué. \n ""Click Cancel to exit."),QMessageBox::Cancel);}
+else
+
+  {
+
+      QMessageBox::information(nullptr, QObject::tr("Ajouter un employé "),
+                                 QObject::tr("Employé non ajouté, vérifier les champs.\n""Click Cancel to exit."), QMessageBox::Cancel);
+
+
+  }
 
 }
 

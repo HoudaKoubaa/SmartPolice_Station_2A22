@@ -46,6 +46,13 @@ private slots:
 
     void on_Impdos_2_clicked();
 
+
+        bool controleVide(QString test);
+
+        bool controleVideInt(int test);
+
+        bool controleEmail(QString test);
+
 private:
     Ui::MainWindow *ui;
     Employes emp;
