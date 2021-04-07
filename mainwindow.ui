@@ -1,0 +1,1099 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1310</width>
+    <height>659</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="accessibleDescription">
+   <string>JJ/MM/AAAA</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>1291</width>
+      <height>761</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>1060</x>
+        <y>290</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #000000;
+  font-size: 16px;</string>
+      </property>
+      <property name="text">
+       <string>Prenom:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>920</x>
+        <y>130</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #000000;
+  font-size: 12px;</string>
+      </property>
+      <property name="text">
+       <string>Recerche par CIN</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButtonAjouter">
+      <property name="geometry">
+       <rect>
+        <x>1100</x>
+        <y>520</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2c3e50;
+    color: #FFFFFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+QPushButton:hover
+{
+
+    background: #3498db;
+}
+
+
+
+
+</string>
+      </property>
+      <property name="text">
+       <string>Ajouter</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>1060</x>
+        <y>450</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #000000;
+  font-size: 16px;</string>
+      </property>
+      <property name="text">
+       <string>Date:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>1060</x>
+        <y>250</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #000000;
+  font-size: 16px;</string>
+      </property>
+      <property name="text">
+       <string>Nom:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>1060</x>
+        <y>330</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #000000;
+  font-size: 16px;</string>
+      </property>
+      <property name="text">
+       <string>Grade:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leemail">
+      <property name="geometry">
+       <rect>
+        <x>1140</x>
+        <y>370</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="Leprenom">
+      <property name="geometry">
+       <rect>
+        <x>1140</x>
+        <y>290</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>1060</x>
+        <y>370</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #000000;
+  font-size: 16px;</string>
+      </property>
+      <property name="text">
+       <string>email:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="Lenom">
+      <property name="geometry">
+       <rect>
+        <x>1140</x>
+        <y>250</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="LeIdRT">
+      <property name="geometry">
+       <rect>
+        <x>890</x>
+        <y>160</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QCalendarWidget" name="meetingsCalendar">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>200</y>
+        <width>311</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QDoubleSpinBox,
+QCalendarWidget QSpinBox 
+{
+	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(70, 70, 70, 255),stop:1 rgba(3, 2, 5, 255));
+	color : #fff;
+	border: 1px solid #1d1d1d;
+	padding: 3px;
+	padding-left: 5px;
+
+}
+
+
+QDoubleSpinBox::up-button, 
+QCalendarWidget QSpinBox::up-button
+{
+	background-color: #4a5157;
+    width: 16px; 
+    border-width: 1px;
+	border-color: #1d1d1d;
+
+}
+
+
+QDoubleSpinBox::up-button:hover, 
+QCalendarWidget QSpinBox::up-button:hover
+{
+	background-color: #585858;
+
+}
+
+
+QDoubleSpinBox::up-button:pressed, 
+QCalendarWidget QSpinBox::up-button:pressed
+{
+	background-color: #252525;
+    width: 16px; 
+    border-width: 1px;
+
+}
+
+
+QDoubleSpinBox::up-arrow,
+QCalendarWidget QSpinBox::up-arrow
+{
+    image: url(://arrow-up.png);
+    width: 7px;
+    height: 7px;
+
+}
+
+
+QDoubleSpinBox::down-button, 
+QCalendarWidget QSpinBox::down-button
+{
+	background-color: #4a5157;
+    width: 16px; 
+    border-width: 1px;
+	border-color: #1d1d1d;
+
+}
+
+
+QDoubleSpinBox::down-button:hover, 
+QCalendarWidget QSpinBox::down-button:hover
+{
+	background-color: #585858;
+
+}
+
+
+QDoubleSpinBox::down-button:pressed, 
+QCalendarWidget QSpinBox::down-button:pressed
+{
+	background-color: #252525;
+    width: 16px; 
+    border-width: 1px;
+
+}
+
+
+QDoubleSpinBox::down-arrow,
+QCalendarWidget QSpinBox::down-arrow
+{
+    image: url(://arrow-down.png);
+    width: 7px;
+    height: 7px;
+
+}
+
+
+/*-----QGroupBox-----*/
+QGroupBox 
+{
+	background-color: #640000;
+    border: 1px solid;
+    border-color: #410d12;
+    margin-top: 23px;
+
+}
+
+
+QGroupBox::title  
+{
+    background-color: #640000;
+    color: #fff;
+	subcontrol-position: top left;
+    subcontrol-origin: margin;
+    padding: 5px;
+	min-width: 100px;
+	border: 1px solid #410d12;
+	border-bottom: none;
+
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="styleEdit">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1291</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2c3e50;
+    color: #FFFFFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+QPushButton:hover
+{
+
+    background: #3498db;
+}
+
+
+
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="logo">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>1120</x>
+        <y>10</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2c3e50;
+    color: #FFFFFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+QPushButton:hover
+{
+
+    background: #3498db;
+}
+
+
+
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../1tap.png</normaloff>../../../1tap.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>100</width>
+        <height>100</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Statistiques">
+      <property name="geometry">
+       <rect>
+        <x>680</x>
+        <y>10</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2c3e50;
+    color: #FFFFFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+QPushButton:hover
+{
+
+    background: #3498db;
+}
+
+
+
+
+</string>
+      </property>
+      <property name="text">
+       <string>Statistiques</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="calendrier">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>10</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2c3e50;
+    color: #FFFFFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+QPushButton:hover
+{
+
+    background: #3498db;
+}
+
+
+
+
+</string>
+      </property>
+      <property name="text">
+       <string>Employee</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lemdp">
+      <property name="geometry">
+       <rect>
+        <x>1140</x>
+        <y>410</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>1024</x>
+        <y>410</y>
+        <width>101</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #000000;
+  font-size: 16px;</string>
+      </property>
+      <property name="text">
+       <string>Mot de passe:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox">
+      <property name="geometry">
+       <rect>
+        <x>1140</x>
+        <y>330</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <item>
+       <property name="text">
+        <string>gouverneur de la police</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>officier de police</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>officier de police adjoint</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>inspecteur de police</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>lieutenant</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Chef de police</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>130</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #000000;
+  font-size: 12px;</string>
+      </property>
+      <property name="text">
+       <string>Recerche par Nom</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="LeTitreRT">
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>160</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>150</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2c3e50;
+    color: #FFFFFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+QPushButton:hover
+{
+
+    background: #3498db;
+}
+
+
+
+
+</string>
+      </property>
+      <property name="text">
+       <string>Tri par grade</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>150</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2c3e50;
+    color: #FFFFFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+QPushButton:hover
+{
+
+    background: #3498db;
+}
+
+
+
+
+</string>
+      </property>
+      <property name="text">
+       <string>Tri par nom</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>460</y>
+        <width>681</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #000000;
+  font-size: 15px;</string>
+      </property>
+      <property name="title">
+       <string>Modifier Ou Supprimer un employé</string>
+      </property>
+      <widget class="QLineEdit" name="LeIdS">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>50</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonSupprimer">
+       <property name="geometry">
+        <rect>
+         <x>530</x>
+         <y>40</y>
+         <width>141</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2c3e50;
+    color: #FFFFFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+QPushButton:hover
+{
+
+    background: #3498db;
+}
+
+
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>Supprimer</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonModifier">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>40</y>
+         <width>141</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2c3e50;
+    color: #FFFFFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+QPushButton:hover
+{
+
+    background: #3498db;
+}
+
+
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>Modifier</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>50</y>
+         <width>41</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: #000000;
+  font-size: 16px;</string>
+       </property>
+       <property name="text">
+        <string>CIN:</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>1060</x>
+        <y>210</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #000000;
+  font-size: 16px;
+QLabel
+{
+	background-color: transparent;
+	color: #fff;
+
+}</string>
+      </property>
+      <property name="text">
+       <string>CIN:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="LeId">
+      <property name="geometry">
+       <rect>
+        <x>1140</x>
+        <y>210</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
+     <widget class="QDateEdit" name="dateEdit">
+      <property name="geometry">
+       <rect>
+        <x>1140</x>
+        <y>450</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableView">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>210</y>
+        <width>631</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QHeaderView::section {
+	font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    background-color: #2c3e50;
+	color: #ffffff;
+    padding: 4px;
+    font-size: 10pt;
+    border-style: none;
+    border-bottom: 1px solid #fffff8;
+    border-right: 1px solid #fffff8;
+
+}
+
+QHeaderView::section:horizontal
+{
+    border-top: 1px solid #fffff8;
+}
+
+QHeaderView::section:vertical
+{
+    border-left: 1px solid #fffff8;
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>102</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>imprimer</string>
+      </property>
+     </widget>
+     <zorder>styleEdit</zorder>
+     <zorder>logo</zorder>
+     <zorder>label_4</zorder>
+     <zorder>label_8</zorder>
+     <zorder>pushButtonAjouter</zorder>
+     <zorder>label_11</zorder>
+     <zorder>label_2</zorder>
+     <zorder>label_5</zorder>
+     <zorder>leemail</zorder>
+     <zorder>Leprenom</zorder>
+     <zorder>label_6</zorder>
+     <zorder>Lenom</zorder>
+     <zorder>LeIdRT</zorder>
+     <zorder>meetingsCalendar</zorder>
+     <zorder>Statistiques</zorder>
+     <zorder>calendrier</zorder>
+     <zorder>lemdp</zorder>
+     <zorder>label_7</zorder>
+     <zorder>comboBox</zorder>
+     <zorder>label_9</zorder>
+     <zorder>LeTitreRT</zorder>
+     <zorder>pushButton_2</zorder>
+     <zorder>pushButton</zorder>
+     <zorder>groupBox_2</zorder>
+     <zorder>label_3</zorder>
+     <zorder>LeId</zorder>
+     <zorder>dateEdit</zorder>
+     <zorder>tableView</zorder>
+     <zorder>pushButton_3</zorder>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QPushButton" name="Statistiques_2">
+      <property name="geometry">
+       <rect>
+        <x>680</x>
+        <y>10</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2c3e50;
+    color: #FFFFFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+QPushButton:hover
+{
+
+    background: #3498db;
+}
+
+
+
+
+</string>
+      </property>
+      <property name="text">
+       <string>Statistiques</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="calendrier_2">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>10</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2c3e50;
+    color: #FFFFFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+QPushButton:hover
+{
+
+    background: #3498db;
+}
+
+
+
+
+</string>
+      </property>
+      <property name="text">
+       <string>employee</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="styleEdit_2">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1291</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2c3e50;
+    color: #FFFFFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+QPushButton:hover
+{
+
+    background: #3498db;
+}
+
+
+
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QWidget" name="chartsWidget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>130</y>
+        <width>1261</width>
+        <height>571</height>
+       </rect>
+      </property>
+     </widget>
+     <zorder>styleEdit_2</zorder>
+     <zorder>calendrier_2</zorder>
+     <zorder>Statistiques_2</zorder>
+     <zorder>chartsWidget</zorder>
+    </widget>
+    <widget class="QWidget" name="page_3"/>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
