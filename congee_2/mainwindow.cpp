@@ -20,6 +20,18 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+bool MainWindow::controleVideInt(int test)
+{
+    if(test!=0)
+        return  true;
+    return false;
+
+}
+
+
+
+
 void MainWindow::update_id()
 {
 
@@ -42,7 +54,8 @@ void MainWindow::on_pushButtonAjouter_clicked()
     QDateTime fin_conge=ui->dateEdit_2->dateTime();
     int id2=ui->comboBox->currentText().toInt(); //convertir une chaine de caractére en un entier
 
-
+    bool test2;
+        test2=(controleVideInt(id) );
     //instancier un objet de la classe Etudiant en utilisant les informations saisies dans l interfaces
     Conge C(id,debut_conge,fin_conge,id2);
 
@@ -50,6 +63,7 @@ void MainWindow::on_pushButtonAjouter_clicked()
 
     bool test =C.ajouterConge();
 
+    if (test2){
     if(test)//si requête executée ==>QMessageBox::information
     {
 
@@ -62,7 +76,17 @@ void MainWindow::on_pushButtonAjouter_clicked()
 
     else //si requête non exécutée ==>QMessageBox::critical
         QMessageBox::critical(nullptr,QObject::tr("Not Ok"),
-                              QObject::tr("Ajout non effectué. \n ""Click Cancel to exit."),QMessageBox::Cancel);
+                              QObject::tr("Ajout non effectué. \n ""Click Cancel to exit."),QMessageBox::Cancel);}
+
+    else
+
+      {
+
+          QMessageBox::information(nullptr, QObject::tr("Ajouter un conge "),
+                                     QObject::tr("conge non ajouté, vérifier les champs.\n""Click Cancel to exit."), QMessageBox::Cancel);
+
+
+      }
 }
 
 void MainWindow::on_pushButtonModifier_clicked()
@@ -74,6 +98,8 @@ void MainWindow::on_pushButtonModifier_clicked()
     QDateTime fin_conge=ui->dateEdit_2->dateTime();
     int id2=ui->comboBox->currentText().toInt(); //convertir une chaine de caractére en un entier
 
+    bool test2;
+        test2=(controleVideInt(id_con) );
        //instancier un objet de la classe Etudiant en utilisant les informations saisies dans l interfaces
             Conge C(id_con,debut_conge,fin_conge,id2);
 
@@ -81,7 +107,7 @@ void MainWindow::on_pushButtonModifier_clicked()
        bool test =C.modifierConge();
 
 
-
+       if (test2){
        if(test)//si requête executée ==>QMessageBox::information
        {
 
@@ -92,7 +118,16 @@ void MainWindow::on_pushButtonModifier_clicked()
        }
        else //si requête non exécutée ==>QMessageBox::critical
            QMessageBox::critical(nullptr,QObject::tr("Not Ok"),
-                                 QObject::tr("Modification non effectué. \n ""Click Cancel to exit."),QMessageBox::Cancel);
+                                 QObject::tr("Modification non effectué. \n ""Click Cancel to exit."),QMessageBox::Cancel);}
+       else
+
+         {
+
+             QMessageBox::information(nullptr, QObject::tr("Ajouter un conge "),
+                                        QObject::tr("conge non ajouté, vérifier les champs.\n""Click Cancel to exit."), QMessageBox::Cancel);
+
+
+         }
 
 
 }

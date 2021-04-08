@@ -36,6 +36,12 @@ private slots:
 
     void on_tableView_clicked(const QModelIndex &index);
 
+
+
+
+    bool controleVideInt(int test);
+
+
 private:
     Ui::MainWindow *ui;
     Conge C;
