@@ -1,22 +1,22 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "violence.h"
-#include <QApplication>
-#include <QMessageBox>
+#include "ui_acceuil.h"
 #include "connection.h"
+#include "login.h"
 #include<QDebug>
-#include <QComboBox>
-
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+#include "acceuil.h"
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
 {
-
     ui->setupUi(this);
-    ui->tabview->setModel(etd.afficher());
-    ui->comboBox->setModel(etd.afficher2());
+    playermusic = new QMediaPlayer;
+
+
+
 
 }
+
 
 MainWindow::~MainWindow()
 {
@@ -25,113 +25,57 @@ MainWindow::~MainWindow()
 
 
 
-void MainWindow::on_leBtAjouter_clicked()
+
+void MainWindow::on_connectpushButton_clicked()
 {
-    //Récuprération des informations saisies dans les 3 champs
-    int id=ui->leId->text().toInt(); //convertir une chaine de caractére en un entier
-    QString nom=ui->leNom->text();
-    QString prenom=ui->lePrenom->text();
-    QString email=ui->LeEmail->text();
-    QString nomaccuse=ui->LeNomA->text();
-    QString autre=ui->commentaire->text();
-    int cin=ui->LeCin->text().toInt();
-    int tel=ui->LeTel->text().toInt();
+  /*  playermusic->setMedia(QUrl::fromLocalFile("SBS:///C:/Users/houda/Desktop/music.wave"));
+    playermusic->play();
+    qDebug() << playermusic->errorString();
+*/
+    username=ui->username->text();
+    password=ui->password->text();
+    QSqlQuery qry;
+    acceuil = new Acceuil(this);
 
-
-    //instancier un objet de la classe Etudiant en utilisant les informations saisies dans l interfaces
-    violence v(id,nom,prenom,email,tel,cin,nomaccuse,autre);
-    //insérer l'objet etudiant instancié dans la table etudiant et recuperer la valeur de retour de query.exec();
-    bool test =v.ajouter();
-    if(test)//si requête executée ==>QMessageBox::information
+    if(qry.exec("SELECT username, password, Role FROM USERS WHERE Username=\'"+ username +"\' AND password=\'" + password + "\'"))
     {
+        if(qry.next())
+        {
+                  ui->label_errur->setText("[+]Valid Username and Password");
+                  acceuil->show();
 
-       //refresh affichage
-        ui->tabview->setModel(etd.afficher());
-        ui->comboBox->setModel(etd.afficher2());
-        QMessageBox::information(nullptr,QObject::tr("ok"),
-                QObject::tr("Ajout effectué \n Click Cancel to exit."), QMessageBox::Cancel);
-    }
-    else //si requête non exécutée ==>QMessageBox::critical
-        QMessageBox::critical(nullptr,QObject::tr("Not Ok"),
-                              QObject::tr("Ajout non effectué. \n ""Click Cancel to exit."),QMessageBox::Cancel);
+            }
+            else{
+                  ui->label_errur->setText("[-]UnValid Username and Password");
 
 
-}
-
-void MainWindow::on_leSupp_clicked()
-{
-    int id =ui->leIdSupp->text().toInt();
-    bool test = etd.supprimer(id);
-    if(test)
-    {
-        //refresh affichage
-         ui->tabview->setModel(etd.afficher());
-         ui->comboBox->setModel(etd.afficher2());
-        QMessageBox::information(nullptr,QObject::tr("ok"),
-                                 QObject::tr("suppression effectué \n ""Click Cancel to exit."),QMessageBox::Cancel);
 
     }
-    else
-        QMessageBox::critical(nullptr,QObject::tr("not ok"),
-                              QObject::tr("suppression non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
+
+}}
+
+void MainWindow::on_volume_sliderMoved(int position)
+{
+playermusic->setVolume(position);
 }
 
-
-
-
-
-
-void MainWindow::on_comboBox_currentIndexChanged(const QString &arg1)
+void MainWindow::on_play_clicked()
 {
-   QString name=ui->comboBox->currentText();
-     QSqlQuery query;
+//load the file
+playermusic->setMedia(QUrl::fromLocalFile("C:/Users/houda/Desktop/music1/music.mp3"));
+playermusic->play();
+qDebug() << playermusic->errorString();
 
-     query.prepare ("select tel_traffic,email_traffic  from violance_arnaque where cin_traffic='"+name+"'");
-     if(query.exec())
-     {
-         while(query.next())
-         {
-             ui->tell->setText(query.value(0).toString());
-             ui->emaill->setText(query.value(1).toString());
-         }
-     }
 }
 
-
-
-void MainWindow::on_Modifier_2_clicked()
+void MainWindow::on_stop_clicked()
 {
-    QString cin=ui->comboBox->currentText();
-     QString tel=ui->tell->text();
-     QString  email=ui->emaill->text();
-     QSqlQuery query;
-    query.prepare("update violance_arnaque set tel_traffic='"+tel+"',email_traffic='"+email+"'where cin_traffic='"+cin+"'");
-if(query.exec())
-{
-    //refresh affichage
-     ui->tabview->setModel(etd.afficher());
-    QMessageBox::information(nullptr,QObject::tr("ok"),
-                             QObject::tr("Modification effectué \n ""Click Cancel to exit."),QMessageBox::Cancel);
-}
-else
-    QMessageBox::critical(nullptr,QObject::tr("not ok"),
-                          QObject::tr("Modification non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
+playermusic->pause();
 }
 
-void MainWindow::on_Supprimer_clicked()
+void MainWindow::on_pushButton_clicked()
 {
-    int cin=ui->comboBox->currentText().toInt();
-    bool test = etd.supprimer(cin);
-    if(test)
-    {
-        //refresh affichage
-         ui->tabview->setModel(etd.afficher());
-         ui->comboBox->setModel(etd.afficher2());
-        QMessageBox::information(nullptr,QObject::tr("ok"),
-                                 QObject::tr("suppression effectué \n ""Click Cancel to exit."),QMessageBox::Cancel);
-
-    }
-    else
-        QMessageBox::critical(nullptr,QObject::tr("not ok"),
-                              QObject::tr("suppression non effectué.\n""Click Cancel to exit."),QMessageBox::Cancel);
+    playermusic->setMedia(QUrl::fromLocalFile("C:/Users/houda/Desktopmusic1/music.mp3"));
+      playermusic->play();
+      qDebug() << playermusic->errorString();
 }

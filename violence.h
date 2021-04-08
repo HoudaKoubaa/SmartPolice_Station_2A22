@@ -3,12 +3,11 @@
 #include<QString>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
-
 class violence
 {
 public:
     violence();
-    violence(int,QString,QString,QString,int,int,QString,QString);
+    violence(int,QString,QString,QString,int,int,QString,QString,QString);
     //getters
     int getId();
     QString getNom();
@@ -17,7 +16,7 @@ public:
     int getCIN();
     int getTel();
     QString getNomaccuse();
-    //bool getType();
+    QString getType();
     QString getAutre();
 
 
@@ -29,7 +28,7 @@ public:
     void setCin(int);
     void setTel(int);
     void setNomaccuse(QString);
-    //void setType(bool);
+    void setType(QString);
     void setAutre(QString);
 
 
@@ -37,12 +36,20 @@ public:
     QSqlQueryModel * afficher();
     QSqlQueryModel * afficher2();
     bool supprimer(int);
+    QSqlQueryModel * AfficherTrieCIN();
+    QSqlQueryModel * rechercherCIN(QString);
 
+    bool controleNumTel(int test);
+
+    bool controleVide(QString test);
+
+    bool controleVideInt(int test);
+
+    bool controleEmail(QString test);
 
 private:
     int id,tel,cin;
-    QString nom,prenom,email,nomaccuse,autre;
-
+    QString nom,prenom,email,nomaccuse,autre,type;
 };
 
 #endif // VIOLENCE_H

@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/recources">
+        <file>img/monote.jpg</file>
+        <file>img/pdclogin.png</file>
+        <file>img/user.png</file>
+        <file>img/lock.png</file>
+        <file>img/authentification.png</file>
+        <file>img/mail.png</file>
+        <file>img/satat.png</file>
+        <file>img/home.png</file>
+        <file>img/logo.png</file>
+        <file>img/back.jpg</file>
+        <file>img/logo (2).png</file>
+        <file>img/password.png</file>
+        <file>img/prisonBreak.mp3</file>
+        <file>img/sms.png</file>
+        <file>img/social.png</file>
+        <file>img/sss.png</file>
+        <file>img/play.png</file>
+        <file>img/stop.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>img/authentification.png</file>
+    </qresource>
+</RCC>

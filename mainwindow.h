@@ -1,34 +1,45 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
 #include <QMainWindow>
-#include "violence.h"
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
+#include <QSound>
+#include "login.h"
+#include "acceuil.h"
+#include <QFileDialog>
+#include <QSqlQuery>
+#include <QSqlQuery>
 
-namespace Ui {
-class MainWindow;
-}
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
-    void on_leBtAjouter_clicked();
+    void on_connectpushButton_clicked();
 
-    void on_leSupp_clicked();
+    void on_volume_sliderMoved(int position);
 
-    void on_comboBox_currentIndexChanged(const QString &arg1);
+    void on_play_clicked();
 
-    void on_Modifier_2_clicked();
+    void on_stop_clicked();
 
-    void on_Supprimer_clicked();
+
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
-    violence etd;
+    QString username="",password="";
+    //QMediaPlayer* player;
+     Acceuil* acceuil;
+     QMediaPlayer*	playermusic;
 };
 #endif // MAINWINDOW_H
