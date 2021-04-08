@@ -89,6 +89,12 @@ QPushButton:hover
       <iconset resource="image.qrc">
        <normaloff>:/img/images.png</normaloff>:/img/images.png</iconset>
      </property>
+     <property name="iconSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
+     </property>
     </widget>
     <widget class="QLabel" name="label_13">
      <property name="geometry">
@@ -549,6 +555,12 @@ QPushButton:hover
       <iconset resource="image.qrc">
        <normaloff>:/Downloads/administrative-tools.png</normaloff>:/Downloads/administrative-tools.png</iconset>
      </property>
+     <property name="iconSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
+     </property>
     </widget>
     <widget class="QPushButton" name="pushButtonSupprimer">
      <property name="geometry">
@@ -592,6 +604,12 @@ QPushButton:hover
      <property name="icon">
       <iconset resource="image.qrc">
        <normaloff>:/Downloads/delete-forever.png</normaloff>:/Downloads/delete-forever.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
      </property>
     </widget>
     <widget class="QLabel" name="label_16">
