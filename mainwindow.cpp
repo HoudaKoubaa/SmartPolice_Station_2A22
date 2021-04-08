@@ -146,6 +146,8 @@ void MainWindow::on_pushButtonModifier_clicked()
     QString mdp=ui->lemdp->text();
     QString email=ui->leemail->text();
 
+    bool test2;
+        test2=(controleEmail(email)&&controleVide(nom)&&controleVide(prenom)&&controleVide(mdp)&&controleVide(email) );
     //instancier un objet de la classe Etudiant en utilisant les informations saisies dans l interfaces
      Employes E(id_emp,nom,prenom,grade,date,mdp,email);
 
@@ -153,7 +155,7 @@ void MainWindow::on_pushButtonModifier_clicked()
     bool test =E.modifierEmployes();
 
 
-
+if (test2){
     if(test)//si requête executée ==>QMessageBox::information
     {
 
@@ -164,7 +166,16 @@ void MainWindow::on_pushButtonModifier_clicked()
     }
     else //si requête non exécutée ==>QMessageBox::critical
         QMessageBox::critical(nullptr,QObject::tr("Not Ok"),
-                              QObject::tr("Modification non effectué. \n ""Click Cancel to exit."),QMessageBox::Cancel);
+                              QObject::tr("Modification non effectué. \n ""Click Cancel to exit."),QMessageBox::Cancel);}
+else
+
+  {
+
+      QMessageBox::information(nullptr, QObject::tr("Ajouter un employé "),
+                                 QObject::tr("Employé non ajouté, vérifier les champs.\n""Click Cancel to exit."), QMessageBox::Cancel);
+
+
+  }
 
 }
 
