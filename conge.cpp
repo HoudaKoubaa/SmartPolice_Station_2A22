@@ -160,7 +160,7 @@ QSqlQueryModel * Conge::rechercherID_emp(QString cin)
 {
     QSqlQueryModel *model= new QSqlQueryModel();
     QSqlQuery q;
-    q.prepare("select * from conge where id_emp like ?");
+    q.prepare("select * from conge where cin_emp like ?");
     q.addBindValue("%"+ cin +"%");
     q.exec();
     model->setQuery(q);

@@ -8,16 +8,16 @@
 #include<QSound>
 
 namespace Ui {
-class Dialoghistorique;
+class Dialogconge;
 }
 
-class Dialoghistorique : public QDialog
+class Dialogconge : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit Dialoghistorique(QWidget *parent = nullptr);
-    ~Dialoghistorique();
+    explicit Dialogconge(QWidget *parent = nullptr);
+    ~Dialogconge();
 
    void update_id();
 
@@ -48,7 +48,7 @@ private slots:
     void on_pushButton_3_clicked();
 
 private:
-    Ui::Dialoghistorique *ui;
+    Ui::Dialogconge *ui;
     Conge C;
     int id_con=0;
     QMediaPlayer*	player;

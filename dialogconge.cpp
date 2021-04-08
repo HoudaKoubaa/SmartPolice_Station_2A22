@@ -8,23 +8,30 @@
 #include <QPixmap>
 #include <QPropertyAnimation>
 
-Dialoghistorique::Dialoghistorique(QWidget *parent) :
+Dialogconge::Dialogconge(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::Dialoghistorique)
+    ui(new Ui::Dialogconge)
 {
     ui->setupUi(this);
+    QPropertyAnimation *animation = new QPropertyAnimation(ui->label_2, "geometry");
+    animation->setDuration(4000);
+    animation->setStartValue(ui->label_2->geometry());
+    animation->setStartValue(QRect(0, 0, 100, 30));
+    animation->setEasingCurve(QEasingCurve::OutBounce);
+    animation->start();
+
     ui->tableView->setModel(C.afficherConge());
     update_id();
     player = new QMediaPlayer;
 
 }
 
-Dialoghistorique::~Dialoghistorique()
+Dialogconge::~Dialogconge()
 {
     delete ui;
 }
 
-bool Dialoghistorique::controleVideInt(int test)
+bool Dialogconge::controleVideInt(int test)
 {
     if(test!=0)
         return  true;
@@ -32,7 +39,7 @@ bool Dialoghistorique::controleVideInt(int test)
 
 }
 
-void Dialoghistorique::update_id()
+void Dialogconge::update_id()
 {
 
        QSqlQueryModel *m=new QSqlQueryModel();
@@ -46,9 +53,9 @@ void Dialoghistorique::update_id()
 
 
 
-void Dialoghistorique::on_pushButtonAjouter_clicked()
+void Dialogconge::on_pushButtonAjouter_clicked()
 {
-    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
     player->play();
     qDebug() << player->errorString();
 
@@ -98,9 +105,9 @@ void Dialoghistorique::on_pushButtonAjouter_clicked()
 
 
 
-void Dialoghistorique::on_pushButtonModifier_clicked()
+void Dialogconge::on_pushButtonModifier_clicked()
 {
-    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
     player->play();
     qDebug() << player->errorString();
 
@@ -144,9 +151,9 @@ void Dialoghistorique::on_pushButtonModifier_clicked()
 
 }
 
-void Dialoghistorique::on_pushButtonSupprimer_clicked()
+void Dialogconge::on_pushButtonSupprimer_clicked()
 {
-        player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
+        player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
         player->play();
         qDebug() << player->errorString();
 
@@ -171,38 +178,38 @@ void Dialoghistorique::on_pushButtonSupprimer_clicked()
 
 
 
-void Dialoghistorique::on_pushButton_clicked()
+void Dialogconge::on_pushButton_clicked()
 {
-    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
     player->play();
     qDebug() << player->errorString();
 
     ui->tableView->setModel(C.AfficherTrieID());
 }
 
-void Dialoghistorique::on_pushButton_2_clicked()
+void Dialogconge::on_pushButton_2_clicked()
 {
-    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
     player->play();
     qDebug() << player->errorString();
 
-    ui->tableView->setModel(C.AfficherTrieDate_debut());
+    ui->tableView->setModel(C.AfficherTrieIDE());
 }
 
 
 
-void Dialoghistorique::on_LeIdRT_textChanged(const QString &arg1)
+void Dialogconge::on_LeIdRT_textChanged(const QString &arg1)
 {
     ui->tableView->setModel(C.rechercherID(arg1));
 }
 
-void Dialoghistorique::on_LeTitreRT_textChanged(const QString &arg1)
+void Dialogconge::on_LeTitreRT_textChanged(const QString &arg1)
 {
     ui->tableView->setModel(C.rechercherID_emp(arg1));
 }
 
 
-void Dialoghistorique::on_tableView_activated(const QModelIndex &index)
+void Dialogconge::on_tableView_activated(const QModelIndex &index)
 {
     QString val=ui->tableView->model()->data(index).toString();
               QSqlQuery qry;
@@ -221,7 +228,7 @@ void Dialoghistorique::on_tableView_activated(const QModelIndex &index)
 
 }
 
-void Dialoghistorique::on_tableView_clicked(const QModelIndex &index)
+void Dialogconge::on_tableView_clicked(const QModelIndex &index)
 {
 
 id_con=ui->tableView->model()->data(index).toInt();
@@ -229,9 +236,9 @@ id_con=ui->tableView->model()->data(index).toInt();
 }
 
 
-void Dialoghistorique::on_pushButton_7_clicked()
+void Dialogconge::on_pushButton_7_clicked()
 {
-    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
     player->play();
     qDebug() << player->errorString();
 
@@ -239,9 +246,9 @@ void Dialoghistorique::on_pushButton_7_clicked()
 }
 
 
-void Dialoghistorique::on_pushButton_3_clicked()
+void Dialogconge::on_pushButton_3_clicked()
 {
-    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
     player->play();
     qDebug() << player->errorString();
 

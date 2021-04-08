@@ -9,12 +9,26 @@
 #include <QPixmap>
 #include <QPrinter>
 #include <QPrintDialog>
+#include <QPropertyAnimation>
 
 Dialogemploye::Dialogemploye(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialogemploye)
 {
      ui->setupUi(this);
+     QPropertyAnimation *animation = new QPropertyAnimation(ui->label, "geometry");
+     animation->setDuration(4000);
+     animation->setStartValue(ui->label->geometry());
+     animation->setStartValue(QRect(0, 0, 100, 30));
+     animation->setEasingCurve(QEasingCurve::OutBounce);
+     animation->start();
+
+     QPropertyAnimation *animatio = new QPropertyAnimation(ui->label_14, "geometry");
+     animatio->setDuration(4000);
+     animatio->setStartValue(ui->label_14->geometry());
+     animatio->setStartValue(QRect(0, 0, 100, 100));
+     animatio->setEasingCurve(QEasingCurve::OutBounce);
+     animatio->start();
 
      ui->tableView->setModel(emp.afficherEmployes());
      update_id();
@@ -74,7 +88,7 @@ void Dialogemploye::update_id()
 void Dialogemploye::on_pushButtonAjouter_clicked()
 {
 
-    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
     player->play();
     qDebug() << player->errorString();
 
@@ -128,7 +142,7 @@ else
 void Dialogemploye::on_pushButtonModifier_clicked()
 {
 
-    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
     player->play();
     qDebug() << player->errorString();
 
@@ -176,7 +190,7 @@ else
 
 void Dialogemploye::on_pushButtonSupprimer_clicked()
 {
-    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
     player->play();
     qDebug() << player->errorString();
 
@@ -200,7 +214,7 @@ QObject::tr("suppression non effectué.\n""Click Cancel to exit."),QMessageBox::
 
 void Dialogemploye::on_pushButton_clicked()
 {
-    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
     player->play();
     qDebug() << player->errorString();
 
@@ -209,7 +223,7 @@ void Dialogemploye::on_pushButton_clicked()
 
 void Dialogemploye::on_pushButton_2_clicked()
 {
-     player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
+     player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
      player->play();
      qDebug() << player->errorString();
      ui->tableView->setModel(emp.AfficherTrieNom());
@@ -254,7 +268,7 @@ void Dialogemploye::on_tableView_clicked(const QModelIndex &index)
 
 void Dialogemploye::on_Impdos_2_clicked()
 {
-    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
     player->play();
     qDebug() << player->errorString();
 
@@ -282,7 +296,7 @@ void Dialogemploye::on_lineEdit_3_textChanged(const QString &arg1)
 
 void Dialogemploye::on_pushButton_3_clicked()
 {
- player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
+ player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
  player->play();
  qDebug() << player->errorString();
  ui->tableView->setModel(emp.AfficherTrieDate());
@@ -290,7 +304,7 @@ void Dialogemploye::on_pushButton_3_clicked()
 
 void Dialogemploye::on_pushButton_4_clicked()
 {    
-    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
     player->play();
     qDebug() << player->errorString();
     close();
