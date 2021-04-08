@@ -1,7 +1,7 @@
-#ifndef DIALOGHISTORIQUE_H
-#define DIALOGHISTORIQUE_H
+#ifndef DIALOGCONGE_H
+#define DIALOGCONGE_H
 #include <QDialog>
-#include "historique.h"
+#include "conge.h"
 #include <QMediaPlayer>
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
@@ -19,10 +19,9 @@ public:
     explicit Dialoghistorique(QWidget *parent = nullptr);
     ~Dialoghistorique();
 
-    void update_id();
+   void update_id();
 
 private slots:
-    bool controleVide(QString test);
 
     bool controleVideInt(int test);
 
@@ -44,17 +43,15 @@ private slots:
 
     void on_tableView_clicked(const QModelIndex &index);
 
-    void on_lineEdit_textChanged(const QString &arg1);
-
-    void on_pushButton_4_clicked();
+    void on_pushButton_7_clicked();
 
     void on_pushButton_3_clicked();
 
 private:
     Ui::Dialoghistorique *ui;
-    Historique h;
-    int id_h=0;
+    Conge C;
+    int id_con=0;
     QMediaPlayer*	player;
 };
 
-#endif // DIALOGHISTORIQUE_H
+#endif // DIALOGCONGE_H

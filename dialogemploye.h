@@ -23,8 +23,6 @@ public:
 private slots:
 
 
-    bool controleNumTel(int test);
-
     bool controleVide(QString test);
 
     bool controleVideInt(int test);
@@ -33,9 +31,9 @@ private slots:
 
     void on_pushButtonAjouter_clicked();
 
-    void on_pushButtonModifier_clicked();
-
     void on_pushButtonSupprimer_clicked();
+
+    void on_pushButtonModifier_clicked();
 
     void on_pushButton_clicked();
 
@@ -51,6 +49,8 @@ private slots:
 
     void on_Impdos_2_clicked();
 
+
+
     void on_lineEdit_3_textChanged(const QString &arg1);
 
     void on_pushButton_3_clicked();
@@ -59,7 +59,7 @@ private slots:
 
 private:
     Ui::Dialogemploye *ui;
-    Employe emp;
+    Employes emp;
     int id_emp=0;
     QMediaPlayer*	player;
 };

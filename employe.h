@@ -3,30 +3,31 @@
 #include<QString>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
+#include <QDateTime>
 
-//comm
-class Employe
+class Employes
 {
 public:
-    Employe();
-    Employe(int,QString,QString,QString,int,int,QString);
+    Employes(); // non parametré
+    Employes(int,QString,QString,QString,QDateTime,QString,QString);// constructeur parametrée
+
     //getters
     int getId();
-    int getSalaire();
-    int getNumTel();
     QString getNom();
     QString getPrenom();
-    QString getRole();
+    QString getGrade();
+    QString getMdp();
+    QDateTime getDate();
     QString getEmail();
 
     //Setters
     void setId(int);
-    void setSalaire(int);
-    void setNumTel(int);
     void setNom(QString);
     void setPrenom(QString);
+    void setGrade(QString);
+    void setMdp(QString);
+    void setDate(QDateTime);
     void setEmail(QString);
-    void setRole(QString);
 
     bool ajouterEmployes();
     QSqlQueryModel * afficherEmployes();
@@ -34,18 +35,20 @@ public:
     bool modifierEmployes ();
 
 
+    //Métiers
     QSqlQueryModel * AfficherTrieCIN();
-    QSqlQueryModel * AfficherTrieS();
     QSqlQueryModel * AfficherTrieNom();
+    QSqlQueryModel * AfficherTrieDate();
 
     QSqlQueryModel * rechercherCIN(QString);
-    QSqlQueryModel * rechercherS(QString);
     QSqlQueryModel * rechercherNom(QString);
+    QSqlQueryModel * rechercherGrade(QString);
     QString  apercu_pdf();
 
 private:
-    int id,salaire,num_tel;
-    QString nom,prenom,email,role;
+    int cin;
+    QString nom,prenom,grade,mdp,email;
+    QDateTime date;
 
 };
 

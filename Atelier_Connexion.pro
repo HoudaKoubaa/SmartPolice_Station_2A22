@@ -34,28 +34,31 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    conge.cpp \
+    dialogconge.cpp \
     dialogemploye.cpp \
-    dialoghistorique.cpp \
     employe.cpp \
-    historique.cpp \
         main.cpp \
         mainwindow.cpp \
     connection.cpp
 
 HEADERS += \
+    conge.h \
+    dialogconge.h \
     dialogemploye.h \
-    dialoghistorique.h \
     employe.h \
-    historique.h \
         mainwindow.h \
     connection.h
 
 FORMS += \
+        dialogconge.ui \
         dialogemploye.ui \
-        dialoghistorique.ui \
         mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    image.qrc

@@ -9,7 +9,7 @@
 #include <QPrinter>
 #include <QPrintDialog>
 #include "dialogemploye.h"
-#include "dialoghistorique.h"
+#include "dialogconge.h"
 #include <QPixmap>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -27,16 +27,19 @@ MainWindow::~MainWindow()
 }
 void MainWindow::on_pushButtonEmploye_clicked()
 {
-    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+
+    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
     player->play();
     qDebug() << player->errorString();
 
     Dialogemploye E;
     E.exec();
+
 }
+
 void MainWindow::on_pushButtonHistorique_clicked()
 {
-    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/son.wav"));
+    player->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/son.wav"));
     player->play();
     qDebug() << player->errorString();
 
@@ -47,10 +50,11 @@ void MainWindow::on_pushButtonHistorique_clicked()
 
 void MainWindow::on_start_2_clicked()
 {
-   playermusic->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source/music.mp3"));
+   playermusic->setMedia(QUrl::fromLocalFile("C:/Users/ASUS/Desktop/Source2/music.mp3"));
    playermusic->play();
    qDebug() << playermusic->errorString();
 }
+
 
 void MainWindow::on_pause_2_clicked()
 {

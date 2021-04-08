@@ -24,17 +24,26 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #535353;
-  border: none;
-  color: black;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-font-family:calibri;
-  display: inline-block;
-  font-size: 30px;
-  margin: 4px 2px;
-  border-radius : 16px;</string>
+     <string notr="true">QPushButton{
+font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2c3e50;
+    color: #FFFFFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+QPushButton:hover
+{
+
+    background: #3498db;
+}</string>
     </property>
     <property name="text">
      <string>Gestion des Employés</string>
@@ -43,8 +52,8 @@ font-family:calibri;
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>870</x>
-      <y>40</y>
+      <x>710</x>
+      <y>50</y>
       <width>281</width>
       <height>141</height>
      </rect>
@@ -63,91 +72,7 @@ font-family:calibri;
   border-radius : 16px;</string>
     </property>
     <property name="title">
-     <string>Musique</string>
-    </property>
-    <widget class="QSlider" name="horizontalSlider_2">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>40</y>
-       <width>160</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="start_2">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>70</y>
-       <width>111</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(221, 221, 221)	;
-  border: none;
-  color: black;
- 
-  text-align: center;
-  text-decoration: none;
-font-family:calibri;
-  
-  font-size: 15px;
- 
-  border-radius : 16px;</string>
-     </property>
-     <property name="text">
-      <string>Start</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pause_2">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>70</y>
-       <width>111</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(221, 221, 221)	;
-  border: none;
-  color: black;
- 
-  text-align: center;
-  text-decoration: none;
-font-family:calibri;
-  
-  font-size: 15px;
- 
-  border-radius : 16px;</string>
-     </property>
-     <property name="text">
-      <string>Pause</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>-10</y>
-      <width>1161</width>
-      <height>531</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
      <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../Source/imgg.png</pixmap>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButtonHistorique">
@@ -160,26 +85,114 @@ font-family:calibri;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #535353;
-  border: none;
-  color: black;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-font-family:calibri;
-  display: inline-block;
-  font-size: 30px;
-  margin: 4px 2px;
-  border-radius : 16px;</string>
+     <string notr="true">QPushButton{
+font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2c3e50;
+    color: #FFFFFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+QPushButton:hover
+{
+
+    background: #3498db;
+}</string>
     </property>
     <property name="text">
      <string>Gestion des Historiques</string>
     </property>
    </widget>
-   <zorder>label</zorder>
-   <zorder>pushButtonEmploye</zorder>
-   <zorder>groupBox</zorder>
-   <zorder>pushButtonHistorique</zorder>
+   <widget class="QPushButton" name="pause_2">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>180</y>
+      <width>111</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2c3e50;
+    color: #FFFFFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+QPushButton:hover
+{
+
+    background: #3498db;
+}</string>
+    </property>
+    <property name="text">
+     <string>Pause</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="start_2">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>70</y>
+      <width>111</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+font-family: &quot;Roboto&quot;, sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2c3e50;
+    color: #FFFFFF;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+
+}
+QPushButton:hover
+{
+
+    background: #3498db;
+}</string>
+    </property>
+    <property name="text">
+     <string>Start</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider_2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>270</y>
+      <width>160</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -187,7 +200,7 @@ font-family:calibri;
      <x>0</x>
      <y>0</y>
      <width>1201</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

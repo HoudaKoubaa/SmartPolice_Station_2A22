@@ -3,221 +3,203 @@
 #include<QDebug>
 
 
-Employe::Employe()
+Employes::Employes()
 {
-        id=0;
-        nom="";
-        prenom="";
-        email="";
-        role="";
-        salaire=0;
-        num_tel=0;
+
+ this->cin=0;
+ this->nom="";
+ this->prenom="";
+ this->grade="";
+ this->mdp="";
+ this->email="";
+
 }
 
-Employe::Employe(int id ,QString nom,QString prenom,QString email,int num_tel,int salaire,QString role)
-{
-     this->id=id;
+Employes::Employes(int cin ,QString nom,QString prenom,QString grade,QDateTime date,QString mdp,QString email)
+ {
+     this->cin=cin;
      this->nom=nom;
      this->prenom=prenom;
+     this->grade=grade;
+     this->date=date;
+     this->mdp=mdp;
      this->email=email;
-     this->num_tel=num_tel;
-     this->salaire=salaire;
-     this->role=role;
 
-}
-
-
-int Employe::getId()
- {
-     return id;
  }
 
-int Employe::getSalaire()
+int Employes::getId()
  {
-     return salaire;
+     return cin;
  }
 
-int Employe::getNumTel()
- {
-     return num_tel;
- }
-
-
-QString Employe:: getNom(){
+QString Employes:: getNom(){
 
    return nom;
  }
 
-QString Employe::getPrenom()
+QString Employes::getPrenom()
  {
        return prenom;
  }
 
-QString Employe::getEmail()
+QString Employes::getEmail()
  {
        return email;
  }
-
-QString Employe::getRole()
+QString Employes::getMdp()
  {
-       return role;
+       return mdp;
+ }
+QString Employes::getGrade()
+ {
+       return grade;
+ }
+QDateTime Employes::getDate()
+ {
+       return date;
  }
 
 
-void Employe ::setId(int id)
+void Employes ::setId(int id)
 {
-    this->id=id;
+    this->cin=id;
 }
 
-void Employe ::setSalaire(int salaire)
-{
-    this->salaire=salaire;
-}
-
-void Employe ::setNumTel(int num_tel)
-{
-    this->num_tel=num_tel;
-}
-
-void Employe::setNom(QString nom)
+void Employes::setNom(QString nom)
 {
     this->nom=nom;
 }
 
-void Employe::setPrenom(QString prenom){
+void Employes::setPrenom(QString prenom){
     this->prenom=prenom;
 }
 
-void Employe::setRole(QString role){
-    this->role=role;
+void Employes::setGrade(QString grade){
+    this->grade=grade;
 }
 
-void Employe::setEmail(QString email){
+void Employes::setEmail(QString email){
     this->email=email;
 }
 
+void Employes::setDate(QDateTime date){
+    this->date=date;
+}
 
-bool Employe::ajouterEmployes()
+void Employes::setMdp(QString mdp){
+    this->mdp=mdp;
+}
+
+
+bool Employes::ajouterEmployes()
 {
     QSqlQuery query;
-    QString res1 = QString::number(id);
-    QString res2 = QString::number(salaire);
-    QString res3 = QString::number(num_tel);
+    QString res = QString::number(cin);
 
     //prepare() prend la requête en paramétre pour la préparer a l'exécution
-    query.prepare("insert into Employes(cinemp,nom,prenom,email,num_tel,salaire,role)""values(:id,:nom,:prenom,:email,:num_tel,:salaire,:role)");
+    query.prepare("insert into Employes(cin_emp,nom_emp,prenom_emp,grade,date_naissance,mot_de_passe,email)""values(:cin_emp,:nom_emp,:prenom_emp,:grade,:date_naissance,:mot_de_passe,:email)");
 
     //Création des variables liées
-    query.bindValue(":id",res1);
-    query.bindValue(":salaire",res2);
-    query.bindValue(":num_tel",res3);
-    query.bindValue(":nom",nom);
-    query.bindValue(":prenom",prenom);
+    query.bindValue(":cin_emp",res);
+    query.bindValue(":nom_emp",nom);
+    query.bindValue(":prenom_emp",prenom);
+    query.bindValue(":grade",grade);
+    query.bindValue(":date_naissance",date);
+    query.bindValue(":mot_de_passe",mdp);
     query.bindValue(":email",email);
-    query.bindValue(":role",role);
 
     return query.exec();//exec() envoie la requête pour l'exécution
 }
 
-
-QSqlQueryModel * Employe::afficherEmployes()
+QSqlQueryModel * Employes::afficherEmployes()
 {
 
 QSqlQueryModel * model=new QSqlQueryModel();
-model->setQuery("select * from Employes");
+model->setQuery("select * from employes");
 return model;
 
 }
 
-
-bool Employe::supprimerEmployes(int idA)
+bool Employes::supprimerEmployes(int idA)
 {
-           QSqlQuery query;
-           QString res=QString::number(idA);
 
-           /*query.prepare("alter table Historiques DROP CONSTRAINT FK");
-           query.exec();*/
 
-           query.prepare("Delete from Historiques where cinemp=:idA");
-           query.bindValue(":idA",res);
-           query.exec();
 
-           query.prepare("Delete from Employes where cinemp=:idA");
-           query.bindValue(":idA",res);
-           return query.exec();
+                      QSqlQuery query;
+                                 QString res=QString::number(idA);
+
+                               /*  query.prepare("alter table conge DROP CONSTRAINT FK");
+                                 query.exec();*/
+
+                                 query.prepare("Delete from conge where cin_emp=:idA");
+                                 query.bindValue(":idA",res);
+                                 query.exec();
+
+                                 query.prepare("Delete from employes where cin_emp=:idA");
+                                 query.bindValue(":idA",res);
+                                 return query.exec();
 }
 
-
-bool Employe::modifierEmployes()
+bool Employes::modifierEmployes()
 {
     QSqlQuery query ;
-    QString res1 = QString::number(id);
-    QString res2 = QString::number(salaire);
-    QString res3 = QString::number(num_tel);
-    query.prepare("UPDATE employes set cinemp = :id, nom = :nom,prenom = :prenom,email=:email,num_tel=:num_tel,salaire=:salaire,role=:role WHERE cinemp=:id");
-    query.bindValue(":id",res1);
-    query.bindValue(":salaire",res2);
-    query.bindValue(":num_tel",res3);
-    query.bindValue(":nom",nom);
-    query.bindValue(":prenom",prenom);
+    QString res = QString::number(cin);
+
+    query.prepare("UPDATE employes set cin_emp=:cin_emp,nom_emp=:nom_emp,prenom_emp=:prenom_emp,grade=:grade,date_naissance=:date_naissance,mot_de_passe=:mot_de_passe,email=:email WHERE cin_emp=:cin_emp");
+
+    //Création des variables liées
+    query.bindValue(":cin_emp",res);
+    query.bindValue(":nom_emp",nom);
+    query.bindValue(":prenom_emp",prenom);
+    query.bindValue(":grade",grade);
+    query.bindValue(":date_naissance",date);
+    query.bindValue(":mot_de_passe",mdp);
     query.bindValue(":email",email);
-    query.bindValue(":role",role);
     return query.exec();
-
 }
 
 
-QSqlQueryModel * Employe::AfficherTrieCIN()
+QSqlQueryModel * Employes::AfficherTrieCIN()
 {
     QSqlQueryModel * model = new QSqlQueryModel();
-    model->setQuery("SELECT * FROM employes ORDER BY cinemp");
-
+    model->setQuery("SELECT * FROM Employes ORDER BY grade");
     return model;
 }
 
-QSqlQueryModel * Employe::AfficherTrieNom()
+
+QSqlQueryModel * Employes::AfficherTrieNom()
 {
     QSqlQueryModel * model = new QSqlQueryModel();
-    model->setQuery("SELECT * FROM employes ORDER BY nom");
-
-
+    model->setQuery("SELECT * FROM employes ORDER BY nom_emp");
     return model;
 }
 
-QSqlQueryModel * Employe::AfficherTrieS()
+
+QSqlQueryModel * Employes::AfficherTrieDate()
 {
     QSqlQueryModel * model = new QSqlQueryModel();
-    model->setQuery("SELECT * FROM employes ORDER BY salaire");
+    model->setQuery("SELECT * FROM employes ORDER BY date_naissance");
     return model;
 }
 
-QSqlQueryModel * Employe::rechercherCIN(QString cin)
+
+QSqlQueryModel * Employes::rechercherCIN(QString cin)
 {
     QSqlQueryModel *model= new QSqlQueryModel();
     QSqlQuery q;
-    q.prepare("select * from employes where cinemp like ?");
+    q.prepare("select * from employes where cin_emp like ?");
     q.addBindValue("%"+ cin +"%");
     q.exec();
     model->setQuery(q);
     return (model);
 }
 
-QSqlQueryModel * Employe::rechercherS(QString cin)
-{
-    QSqlQueryModel *model= new QSqlQueryModel();
-    QSqlQuery q;
-    q.prepare("select * from employes where salaire like ?");
-    q.addBindValue("%"+ cin +"%");
-    q.exec();
-    model->setQuery(q);
-    return (model);
-}
 
-QSqlQueryModel * Employe::rechercherNom(QString nom)
+QSqlQueryModel * Employes::rechercherNom(QString nom)
 {
     QSqlQueryModel *model= new QSqlQueryModel();
     QSqlQuery q;
-    q.prepare("select * from employes where nom like ?");
+    q.prepare("select * from employes where nom_emp like ?");
     q.addBindValue("%"+ nom +"%");
     q.exec();
     model->setQuery(q);
@@ -225,14 +207,27 @@ QSqlQueryModel * Employe::rechercherNom(QString nom)
 
 }
 
-QString Employe:: apercu_pdf()
+QSqlQueryModel * Employes::rechercherGrade(QString nom)
+{
+    QSqlQueryModel *model= new QSqlQueryModel();
+    QSqlQuery q;
+    q.prepare("select * from employes where grade like ?");
+    q.addBindValue("%"+ nom +"%");
+    q.exec();
+    model->setQuery(q);
+    return (model);
+
+}
+
+
+QString Employes:: apercu_pdf()
  {
-    QString text="          ****** Les employes  ******      \n \n " ;
+    QString text="          **** Les employes  ****      \n \n " ;
      QSqlQuery query ;
-     QString i,x,z,a,b,c,d,h,h1,h2,h3,h4;
+     QString i,x,z,a,b,c,d,h,h1,h2,h3;
 
 
-      query.exec("select * from employes left join historiques on historiques.cinemp=employes.cinemp ");
+      query.exec("select * from employes left join conge on conge.cin_emp=employes.cin_emp ");
       while (query.next())
       {
          i=query.value(0).toString();
@@ -246,9 +241,9 @@ QString Employe:: apercu_pdf()
          h1=query.value(8).toString();
          h2=query.value(9).toString();
          h3=query.value(10).toString();
-         h4=query.value(11).toString();
 
-        text += "\n Employe Id : "+i+"\n\n - Nom : "+ x+"\n - prenom : "+ z+"\n - email:"+a+"\n - num_tel :"+b+"\n - salaire : "+c+"\n - role:"+d+"_______\n\n Historique Id:"+h+"\n" "\n -Presences:"+h1+"\n" " -Tache:"+h2+"\n" " -Debut conge:"+h3+"\n" " -Fin conge:"+h4+"\n" ;
+
+        text += "\n Employe Id : "+i+"\n\n - Nom : "+ x+"\n - prenom : "+ z+"\n - grade:"+a+"\n - date_naissance :"+b+"\n - mot_de_passe : "+c+"\n - email:"+d+"_______\n\n Conge Id:"+h+"\n" "\n -Id conge:"+h1+"\n" " -Debut conge:"+h2+"\n" " -Fin conge:"+h3+"\n"  ;
 
 
      }
