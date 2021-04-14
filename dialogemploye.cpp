@@ -309,3 +309,29 @@ void Dialogemploye::on_pushButton_4_clicked()
     qDebug() << player->errorString();
     close();
 }
+
+
+
+void Dialogemploye::on_tabWidget_tabBarClicked(int index)
+{
+    qDeleteAll(ui->tabWidget_2->widget(0)->children());
+    QWidget* barstats = new QWidget(this);
+    barstats = barchart();
+    QGridLayout* layout = new QGridLayout(this);
+    layout->addWidget(barstats, 0, 0); // Top-Left
+    layout->addWidget(NULL, 0, 1); // Top-Right
+    layout->addWidget(NULL, 1, 0); // Bottom-Left
+    layout->addWidget(NULL, 1, 1); // Bottom-Right
+    ui->tab_6->setLayout(layout);
+
+    qDeleteAll(ui->tabWidget_2->widget(1)->children());
+    QWidget* piestats = new QWidget(this);
+    piestats = piechart();
+    QGridLayout* layout1 = new QGridLayout(this);
+    layout1->addWidget(piestats, 0, 0); // Top-Left
+    layout1->addWidget(NULL, 0, 1); // Top-Right
+    layout1->addWidget(NULL, 1, 0); // Bottom-Left
+    layout1->addWidget(NULL, 1, 1); // Bottom-Right
+    //ui->tabWidget->widget(0)->setLayout(layout);
+    ui->tab_7->setLayout(layout1);
+}

@@ -33,10 +33,13 @@
 }
 </string>
    </property>
+   <property name="tabShape">
+    <enum>QTabWidget::Rounded</enum>
+   </property>
    <property name="currentIndex">
     <number>0</number>
    </property>
-   <widget class="QWidget" name="tab">
+   <widget class="QWidget" name="grade">
     <attribute name="title">
      <string>Gestion des employés</string>
     </attribute>
@@ -963,7 +966,7 @@ QPushButton:hover
        </property>
        <property name="icon">
         <iconset resource="image.qrc">
-         <normaloff>:/Downloads/delete-forever.png</normaloff>:/Downloads/delete-forever.png</iconset>
+         <normaloff>:/img/delete-forever.png</normaloff>:/img/delete-forever.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -1013,7 +1016,7 @@ QPushButton:hover
        </property>
        <property name="icon">
         <iconset resource="image.qrc">
-         <normaloff>:/Downloads/administrative-tools.png</normaloff>:/Downloads/administrative-tools.png</iconset>
+         <normaloff>:/img/administrative-tools.png</normaloff>:/img/administrative-tools.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -1513,6 +1516,34 @@ QPushButton:hover
     <zorder>imp</zorder>
     <zorder>styleEdit_3</zorder>
     <zorder>label_14</zorder>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>satistique</string>
+    </attribute>
+    <widget class="QTabWidget" name="tabWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>6</x>
+       <y>0</y>
+       <width>1281</width>
+       <height>611</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="tab_6">
+      <attribute name="title">
+       <string>grade</string>
+      </attribute>
+     </widget>
+     <widget class="QWidget" name="tab_7">
+      <attribute name="title">
+       <string>Date</string>
+      </attribute>
+     </widget>
+    </widget>
    </widget>
   </widget>
  </widget>

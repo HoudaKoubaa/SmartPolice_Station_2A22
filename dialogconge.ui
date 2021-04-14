@@ -553,7 +553,7 @@ QPushButton:hover
      </property>
      <property name="icon">
       <iconset resource="image.qrc">
-       <normaloff>:/Downloads/administrative-tools.png</normaloff>:/Downloads/administrative-tools.png</iconset>
+       <normaloff>:/img/administrative-tools.png</normaloff>:/img/administrative-tools.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -603,7 +603,7 @@ QPushButton:hover
      </property>
      <property name="icon">
       <iconset resource="image.qrc">
-       <normaloff>:/Downloads/delete-forever.png</normaloff>:/Downloads/delete-forever.png</iconset>
+       <normaloff>:/img/delete-forever.png</normaloff>:/img/delete-forever.png</iconset>
      </property>
      <property name="iconSize">
       <size>

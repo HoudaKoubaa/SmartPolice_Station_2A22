@@ -34,13 +34,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    barchart.cpp \
     conge.cpp \
     dialogconge.cpp \
     dialogemploye.cpp \
     employe.cpp \
         main.cpp \
         mainwindow.cpp \
-    connection.cpp
+    connection.cpp \
+    piechart.cpp \
+    quitter.cpp
 
 HEADERS += \
     conge.h \
@@ -48,12 +51,14 @@ HEADERS += \
     dialogemploye.h \
     employe.h \
         mainwindow.h \
-    connection.h
+    connection.h \
+    quitter.h
 
 FORMS += \
         dialogconge.ui \
         dialogemploye.ui \
-        mainwindow.ui
+        mainwindow.ui \
+        quitter.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

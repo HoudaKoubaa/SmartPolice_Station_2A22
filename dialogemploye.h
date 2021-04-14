@@ -6,6 +6,7 @@
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
 #include<QSound>
+#include <QtCharts>
 
 namespace Ui {
 class Dialogemploye;
@@ -18,7 +19,22 @@ class Dialogemploye : public QDialog
 public:
     explicit Dialogemploye(QWidget *parent = nullptr);
     ~Dialogemploye();
+
     void update_id();
+
+    int R_BCS1();
+    int R_BCS2();
+    int R_BCS3();
+    int R_BCS4();
+    int R_BCS5();
+    int R_BCS6();
+
+    int G_PVS1();
+    int G_PVS2();
+    int G_PVS3();
+
+        QChartView* barchart();
+        QChartView* piechart();
 
 private slots:
 
@@ -56,6 +72,10 @@ private slots:
     void on_pushButton_3_clicked();
 
     void on_pushButton_4_clicked();
+
+
+
+    void on_tabWidget_tabBarClicked(int index);
 
 private:
     Ui::Dialogemploye *ui;

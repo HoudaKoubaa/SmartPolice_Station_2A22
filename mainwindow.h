@@ -7,6 +7,7 @@
 #include <QMediaPlaylist>
 #include<QSound>
 #include <QFileDialog>
+#include <QtCharts>
 
 namespace Ui {
 class MainWindow;
@@ -18,6 +19,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
+
     ~MainWindow();
 
 private slots:
@@ -30,6 +32,8 @@ private slots:
  void on_pause_2_clicked();
 
  void on_horizontalSlider_2_sliderMoved(int position);
+
+ void on_pushButtonquitter_clicked();
 
 private:
     Ui::MainWindow *ui;

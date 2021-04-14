@@ -248,5 +248,6 @@ QString Employes:: apercu_pdf()
 
      }
 
+
              return text ;
  }

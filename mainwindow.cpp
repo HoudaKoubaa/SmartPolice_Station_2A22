@@ -10,6 +10,7 @@
 #include <QPrintDialog>
 #include "dialogemploye.h"
 #include "dialogconge.h"
+#include "quitter.h"
 #include <QPixmap>
 #include <QPropertyAnimation>
 
@@ -73,4 +74,11 @@ void MainWindow::on_pause_2_clicked()
 void MainWindow::on_horizontalSlider_2_sliderMoved(int position)
 {
     playermusic->setVolume(position);
+}
+
+void MainWindow::on_pushButtonquitter_clicked()
+{
+    quitter afficher;
+    afficher.setModal(true);
+    afficher.exec();
 }
