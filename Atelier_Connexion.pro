@@ -39,24 +39,29 @@ SOURCES += \
     dialogconge.cpp \
     dialogemploye.cpp \
     employe.cpp \
+    mailing.cpp \
         main.cpp \
         mainwindow.cpp \
     connection.cpp \
     piechart.cpp \
-    quitter.cpp
+    quitter.cpp \
+    smtp.cpp
 
 HEADERS += \
     conge.h \
     dialogconge.h \
     dialogemploye.h \
     employe.h \
+    mailing.h \
         mainwindow.h \
     connection.h \
-    quitter.h
+    quitter.h \
+    smtp.h
 
 FORMS += \
         dialogconge.ui \
         dialogemploye.ui \
+        mailing.ui \
         mainwindow.ui \
         quitter.ui
 

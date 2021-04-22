@@ -10,6 +10,10 @@
 #include <QPrinter>
 #include <QPrintDialog>
 #include <QPropertyAnimation>
+#include "mailing.h"
+#include <QDialog>
+
+
 
 Dialogemploye::Dialogemploye(QWidget *parent) :
     QDialog(parent),
@@ -334,4 +338,10 @@ void Dialogemploye::on_tabWidget_tabBarClicked(int index)
     layout1->addWidget(NULL, 1, 1); // Bottom-Right
     //ui->tabWidget->widget(0)->setLayout(layout);
     ui->tab_7->setLayout(layout1);
+}
+
+void Dialogemploye::on_pushButtonmail_clicked()
+{
+    mailing m;
+    m.exec();
 }

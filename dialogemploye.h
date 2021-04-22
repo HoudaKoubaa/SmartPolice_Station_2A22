@@ -77,6 +77,8 @@ private slots:
 
     void on_tabWidget_tabBarClicked(int index);
 
+    void on_pushButtonmail_clicked();
+
 private:
     Ui::Dialogemploye *ui;
     Employes emp;
