@@ -11,6 +11,7 @@ mailing::mailing(QWidget *parent) :
     ui->setupUi(this);
     player = new QMediaPlayer;
 
+
 }
 
 mailing::~mailing()

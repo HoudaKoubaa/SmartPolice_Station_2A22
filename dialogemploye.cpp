@@ -342,6 +342,11 @@ void Dialogemploye::on_tabWidget_tabBarClicked(int index)
 
 void Dialogemploye::on_pushButtonmail_clicked()
 {
+    player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
+    player->play();
     mailing m;
     m.exec();
+    m.setModal(true);
+
+
 }

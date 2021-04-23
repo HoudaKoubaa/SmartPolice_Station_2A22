@@ -8,28 +8,64 @@
 #include <QLineEdit>
 #include <QSqlQueryModel>
 #include <QtCharts>
+#include <QColor>
 #include "dialogemploye.h"
 
 QChartView* Dialogemploye::piechart()
 {
 
     QPieSeries *series = new QPieSeries();
+    QPieSeries *series1 = new QPieSeries();
+
+
     series->append("2021", 1);
     series->append("2020", 2);
     series->append("2019", 3);
 
+    series1->append("", 1);
+    series1->append("", 2);
+    series1->append("", 3);
 
+    series1->hide();
     series->slices().at(0)->setValue(G_PVS1());
     series->slices().at(1)->setValue(G_PVS2());
     series->slices().at(2)->setValue(G_PVS3());
-    series->slices().at(0)->setBrush(Qt::darkMagenta);
+    series->slices().at(0)->setBrush(Qt::darkCyan);
+    series->slices().at(1)->setBrush(Qt::darkBlue);
+    series->slices().at(2)->setBrush(Qt::blue);
+
+    series1->slices().at(0)->setValue(G_PVS1());
+    series1->slices().at(1)->setValue(G_PVS2());
+    series1->slices().at(2)->setValue(G_PVS3());
+
+    series1->slices().at(0)->setBrush(Qt::darkCyan);
+    series1->slices().at(1)->setBrush(Qt::darkBlue);
+    series1->slices().at(2)->setBrush(Qt::blue);
+    series->slices().at(2)->setExploded();
+    series1->slices().at(2)->setExploded();
+
     QChart *chart = new QChart();
     chart->addSeries(series);
+    chart->addSeries(series1);
     chart->setTitle("Conge par Annee");
+    chart->setAnimationOptions(QChart::AllAnimations);
+
 
 
     QChartView *chartView1 = new QChartView(chart);
     chartView1->setRenderHint(QPainter::Antialiasing);
+
+
+
+
+    series1->setLabelsVisible();
+
+    for(auto slice : series1->slices())
+    slice->setLabel(QString("%1%").arg(100*slice->percentage(), 0, 'f', 1));
+
+
+
+
 
     return chartView1;
 }
