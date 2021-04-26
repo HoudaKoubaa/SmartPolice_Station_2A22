@@ -80,6 +80,12 @@ void Dialogconge::on_pushButtonAjouter_clicked()
     if(test)//si requête executée ==>QMessageBox::information
     {
 
+        notifier = new QSystemTrayIcon(this);
+        notifier->setIcon(QIcon(":/notification.jpg"));
+        notifier->show();
+
+       notifier->showMessage(" NOTIFICATION ","conge affecte",QSystemTrayIcon::Information,10000); ;
+
        //refresh affichage
         ui->tableView->setModel(C.afficherConge());
         update_id();
@@ -112,7 +118,7 @@ void Dialogconge::on_pushButtonModifier_clicked()
     qDebug() << player->errorString();
 
     //Récuprération des informations saisies dans les 3 champs
-
+     int idaa =ui->LeId_2->text().toInt();
 
     QDateTime debut_conge=ui->dateEdit->dateTime();
     QDateTime fin_conge=ui->dateEdit_2->dateTime();
@@ -121,7 +127,7 @@ void Dialogconge::on_pushButtonModifier_clicked()
     bool test2;
         test2=(controleVideInt(id_con) );
        //instancier un objet de la classe Etudiant en utilisant les informations saisies dans l interfaces
-            Conge C(id_con,debut_conge,fin_conge,id2);
+            Conge C(idaa,debut_conge,fin_conge,id2);
 
        //insérer l'objet etudiant instancié dans la table etudiant et recuperer la valeur de retour de query.exec();
        bool test =C.modifierConge();
@@ -156,8 +162,9 @@ void Dialogconge::on_pushButtonSupprimer_clicked()
         player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
         player->play();
         qDebug() << player->errorString();
+        int idaa =ui->LeId_2->text().toInt();
 
-        bool test = C.supprimerConge(id_con);
+        bool test = C.supprimerConge(idaa);
         if(test)
         {
             //refresh affichage

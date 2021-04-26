@@ -95,17 +95,46 @@ return model;
 bool Conge::supprimerConge(int idA)
 {
     QSqlQuery query;
+    QSqlQuery query1;
+    int b=0;
     QString res=QString::number(idA);
+    query1.prepare("SELECT id_conge FROM conge WHERE id_conge=:idA");
+               query1.bindValue(":idA",res);
+               query1.exec();
+               while(query1.next())
+               {
+                   b++;
+               }
+
+               if (b!=0)
+               {
     query.prepare("Delete from conge where id_conge=:idA");
     query.bindValue(":idA",res);
-    return query.exec();
+    return query.exec();}
+               else
+                          {
+                              return false;
+                          }
 }
 
 bool Conge::modifierConge()
 {
     QSqlQuery query;
+    QSqlQuery query1;
+               int b=0;
     QString res1 = QString::number(id_conge);
     QString res2 = QString::number(id_emp);
+    query1.prepare("SELECT id_conge FROM conge WHERE id_conge=:idA");
+               query1.bindValue(":idA",res1);
+               query1.exec();
+               while(query1.next())
+               {
+                   b++;
+               }
+
+               if (b!=0)
+               {
+
 
     query.prepare("UPDATE conge set id_conge = :id_conge,debut_conge = :debut_conge,fin_conge=:fin_conge, cin_emp = :cin_emp WHERE id_conge =:id_conge");
     //Création des variables liées
@@ -114,7 +143,11 @@ bool Conge::modifierConge()
     query.bindValue(":fin_conge",fin_conge);
     query.bindValue(":cin_emp",res2);
 
-    return query.exec();
+    return query.exec();}
+               else
+                          {
+                              return false;
+                          }
 }
 
 

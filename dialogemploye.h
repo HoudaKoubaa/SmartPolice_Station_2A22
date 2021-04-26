@@ -79,6 +79,8 @@ private slots:
 
     void on_pushButtonmail_clicked();
 
+
+
 private:
     Ui::Dialogemploye *ui;
     Employes emp;

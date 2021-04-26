@@ -126,10 +126,20 @@ bool Employes::supprimerEmployes(int idA)
 
 
                       QSqlQuery query;
+                      QSqlQuery query1;
+                                 int b=0;
                                  QString res=QString::number(idA);
 
-                               /*  query.prepare("alter table conge DROP CONSTRAINT FK");
-                                 query.exec();*/
+                                 query1.prepare("SELECT cin_emp FROM Employes WHERE cin_emp=:idA");
+                                            query1.bindValue(":idA",res);
+                                            query1.exec();
+                                            while(query1.next())
+                                            {
+                                                b++;
+                                            }
+
+                                            if (b!=0)
+                                            {
 
                                  query.prepare("Delete from conge where cin_emp=:idA");
                                  query.bindValue(":idA",res);
@@ -137,13 +147,30 @@ bool Employes::supprimerEmployes(int idA)
 
                                  query.prepare("Delete from employes where cin_emp=:idA");
                                  query.bindValue(":idA",res);
-                                 return query.exec();
+                                 return query.exec();}
+                                            else
+                                                       {
+                                                           return false;
+                                                       }
 }
 
 bool Employes::modifierEmployes()
 {
     QSqlQuery query ;
+    QSqlQuery query1;
+    int b=0;
     QString res = QString::number(cin);
+
+    query1.prepare("SELECT cin_emp FROM Employes WHERE cin_emp=:idA");
+               query1.bindValue(":idA",res);
+               query1.exec();
+               while(query1.next())
+               {
+                   b++;
+               }
+
+               if (b!=0)
+               {
 
     query.prepare("UPDATE employes set cin_emp=:cin_emp,nom_emp=:nom_emp,prenom_emp=:prenom_emp,grade=:grade,date_naissance=:date_naissance,mot_de_passe=:mot_de_passe,email=:email WHERE cin_emp=:cin_emp");
 
@@ -155,7 +182,11 @@ bool Employes::modifierEmployes()
     query.bindValue(":date_naissance",date);
     query.bindValue(":mot_de_passe",mdp);
     query.bindValue(":email",email);
-    return query.exec();
+    return query.exec();}
+    else
+               {
+                   return false;
+               }
 }
 
 

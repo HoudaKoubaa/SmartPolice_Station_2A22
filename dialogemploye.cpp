@@ -151,6 +151,7 @@ void Dialogemploye::on_pushButtonModifier_clicked()
     qDebug() << player->errorString();
 
     //Récuprération des informations saisies dans les 3 champs
+    int idaa =ui->LeId->text().toInt();
     QString nom=ui->Lenom->text();
     QString prenom=ui->Leprenom->text();
     QString grade=ui->comboBox->currentText();
@@ -161,7 +162,7 @@ void Dialogemploye::on_pushButtonModifier_clicked()
     bool test2;
         test2=(controleEmail(email)&&controleVide(nom)&&controleVide(prenom)&&controleVide(mdp)&&controleVide(email) );
     //instancier un objet de la classe Etudiant en utilisant les informations saisies dans l interfaces
-     Employes E(id_emp,nom,prenom,grade,date,mdp,email);
+     Employes E(idaa,nom,prenom,grade,date,mdp,email);
 
     //insérer l'objet etudiant instancié dans la table etudiant et recuperer la valeur de retour de query.exec();
     bool test =E.modifierEmployes();
@@ -197,8 +198,9 @@ void Dialogemploye::on_pushButtonSupprimer_clicked()
     player->setMedia(QUrl::fromLocalFile("C:/Users/Zeineb/Desktop/Source2/son.wav"));
     player->play();
     qDebug() << player->errorString();
+ int idaa =ui->LeId->text().toInt();
 
-    bool test = emp.supprimerEmployes(id_emp);
+    bool test = emp.supprimerEmployes(idaa);
     if(test)
     {
         //refresh affichage
@@ -350,3 +352,4 @@ void Dialogemploye::on_pushButtonmail_clicked()
 
 
 }
+

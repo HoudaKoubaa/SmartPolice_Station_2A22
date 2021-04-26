@@ -6,6 +6,8 @@
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
 #include<QSound>
+#include <QSystemTrayIcon>
+#include <qsystemtrayicon.h>
 
 namespace Ui {
 class Dialogconge;
@@ -52,6 +54,7 @@ private:
     Conge C;
     int id_con=0;
     QMediaPlayer*	player;
+   QSystemTrayIcon *notifier;
 };
 
 #endif // DIALOGCONGE_H

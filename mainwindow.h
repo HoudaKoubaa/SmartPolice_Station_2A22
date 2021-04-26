@@ -8,6 +8,8 @@
 #include<QSound>
 #include <QFileDialog>
 #include <QtCharts>
+#include <QSystemTrayIcon>
+#include <qsystemtrayicon.h>
 
 namespace Ui {
 class MainWindow;
@@ -34,11 +36,13 @@ private slots:
  void on_horizontalSlider_2_sliderMoved(int position);
 
  void on_pushButtonquitter_clicked();
+ bool auto_mail();
 
 private:
     Ui::MainWindow *ui;
     QMediaPlayer*	playermusic;
     QMediaPlayer*	player;
+    QSystemTrayIcon *notifier;
 
 };
 
