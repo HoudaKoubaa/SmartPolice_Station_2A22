@@ -15,7 +15,6 @@
 #include <QMediaPlaylist>
 #include <QtCharts/QChart>
 #include <QtCharts/QPieSeries>
-#include<arduino.h>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -41,8 +40,5 @@ private:
     login e;
     acceuil a;
     sign* s;
-    arduino A;
-    QByteArray data,ard;
-    QSerialPort *arduino;
 };
 #endif // MAINWINDOW_H

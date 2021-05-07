@@ -21,8 +21,6 @@
 #include "nvcompte.h"
 #include"citoyen.h"
 #include "acceuil.h"
-#include <QPropertyAnimation>
-#include <arduino.h>
 
 #define colorFalse "color:red;"
 #define colorTrue "color:rgb(28,255,33);"
@@ -30,27 +28,9 @@ acceuil::acceuil(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::acceuil)
 {
-
-    int ret =a.connect_arduino();
-        switch(ret){
-        case(0): qDebug()<<"arduino is available and connected to :"<<a.getarduino_port_name();
-            break ;
-        case(1): qDebug()<<"arduino is available but not connected to :"<<a.getarduino_port_name();
-            break ;
-        case(-1): qDebug()<<"arduino is not avaialable";
-        }
-        QObject::connect(a.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
-
     ui->setupUi(this);
     refrechir();
-     auto_mail();
-
-    QPropertyAnimation *animation = new QPropertyAnimation(ui->logo, "geometry");
-    animation->setDuration(4000);
-    animation->setStartValue(ui->logo->geometry());
-    animation->setStartValue(QRect(0, 0, 100, 30));
-    animation->setEasingCurve(QEasingCurve::OutBounce);
-    animation->start();
+    auto_mail();
 }
 
 //**************************************IMPLIMENTATION PARTIE HOUDA ****************************************//
@@ -702,7 +682,29 @@ void acceuil::on_pushButton_3_clicked()
     E.exec();
 }
 
+bool acceuil::auto_mail()
+{
 
+     QSqlQuery query;
+     QDate date = QDate::currentDate();
+     query.prepare("SELECT email,nom_emp FROM Employes WHERE cin_emp IN ( SELECT cin_emp  FROM conge WHERE fin_conge=:date ) ");
+     query.bindValue(":date",date);
+     bool b=query.exec();
+     while (query.next())
+     {
+
+      QString mail = query.value(0).toString();
+      QString nom  = query.value(1).toString();
+      QString sujet  ="Police Station" ;
+      QString message="Bonjour monsieur "+nom+",\n Votre congée expirera bientot,vous devez nous contactez";
+
+      Smtp* smtp = new Smtp("houda.koubaa@esprit.tn","191JFT51352020","smtp.gmail.com");
+      smtp->sendMail("houda.koubaa@esprit.tn",mail,sujet,message);
+
+     }
+     return b;
+
+}
 
 
 void acceuil::on_pushButtonquitter_clicked()
@@ -1395,44 +1397,3 @@ void acceuil::on_gestionRDV_clicked()
 
 
 
-
-void acceuil::on_pause_2_clicked()
-{
-    playermusic->pause();
-}
-
-void acceuil::on_start_2_clicked()
-{
-    playermusic->setMedia(QUrl::fromLocalFile("C:/Users/houda/Desktop/music1/son.wav"));
-    playermusic->play();
-    qDebug() << playermusic->errorString();
-}
-
-void acceuil::on_horizontalSlider_2_sliderMoved(int position)
-{
-    playermusic->setVolume(position);
-}
-
-bool acceuil::auto_mail()
-{
-
-     QSqlQuery query;
-     QDate date = QDate::currentDate();
-     query.prepare("SELECT email,nom_emp FROM Employes WHERE cin_emp IN ( SELECT cin_emp  FROM conge WHERE fin_conge=:date ) ");
-     query.bindValue(":date",date);
-     bool b=query.exec();
-     while (query.next())
-     {
-
-      QString mail = query.value(0).toString();
-      QString nom  = query.value(1).toString();
-      QString sujet  ="Police Station" ;
-      QString message="Bonjour monsieur "+nom+",\n Votre congée expirera bientot,vous devez nous contactez";
-
-      Smtp* smtp = new Smtp("houda.koubaa@esprit.tn","191JFT51352020","smtp.gmail.com");
-      smtp->sendMail("houda.koubaa@esprit.tn",mail,sujet,message);
-
-     }
-     return b;
-
-}

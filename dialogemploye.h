@@ -32,7 +32,6 @@ public:
     void update_id();
     void updatee_id();
 
-
     int R_BCS1();
     int R_BCS2();
     int R_BCS3();
@@ -53,7 +52,6 @@ private slots:
     bool controleVide(QString test);
 
     bool controleVideInt(int test);
-
 
     bool controleEmail(QString test);
     bool controledate(QDateTime debut,QDateTime fin);

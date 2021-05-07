@@ -9,7 +9,6 @@
 #include <QMessageBox>
 #include <QDebug>
 #include <QComboBox>
-#include <arduino.h>
 //stat
 #include<QtCharts>
 #include<QChartView>
@@ -123,7 +122,6 @@ private slots:
     void on_pushButtonquitter_clicked();
     bool auto_mail();
 
-
     /***************************travail de Ahmed*************************************/
 
     void on_pb_ajouter_clicked();
@@ -173,12 +171,6 @@ private slots:
 
     void on_dec_clicked();
 
-    void on_pause_2_clicked();
-
-    void on_start_2_clicked();
-
-    void on_horizontalSlider_2_sliderMoved(int position);
-
 private:
     Ui::acceuil *ui;
     violence etd;
@@ -196,8 +188,6 @@ private:
    Citoyen tmpcitoyen;
    Assistance tmpassistance;
    rdv tmprdv;
-   arduino a;
-   QByteArray data,ard;
 
    /*************************** FIN travail de Ahmed***************************************/
 

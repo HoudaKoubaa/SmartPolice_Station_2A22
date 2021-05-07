@@ -46,7 +46,6 @@ Dialogemploye::Dialogemploye(QWidget *parent) :
      update_id();
      updatee_id();
 
-
      player = new QMediaPlayer;
 
 }
@@ -883,8 +882,5 @@ void Dialogemploye::on_pdf_clicked()
 
     }
 }
-
-
-
 
 /****************************END travail khalil*******************************************/

@@ -35,13 +35,7 @@ void MainWindow::on_pushButton_clicked()
     {
         if(qry.next())
         {
-
-
                   ui->label_errur->setText("[+]Valid Username and Password");
-                  QByteArray br = username.toUtf8();
-
-                   A.write_to_arduino(br);
-                  qDebug() << br;
 
                  acceuil a;
                  this->hide();

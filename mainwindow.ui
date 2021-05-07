@@ -23,8 +23,8 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>300</y>
+      <x>50</x>
+      <y>30</y>
       <width>711</width>
       <height>421</height>
      </rect>
@@ -85,9 +85,9 @@ image: url(:/image/img/151063767_429005728336484_2086052602840462546_n.png);</st
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>50</y>
-       <width>371</width>
+       <x>110</x>
+       <y>40</y>
+       <width>441</width>
        <height>51</height>
       </rect>
      </property>
@@ -100,7 +100,7 @@ image: url(:/image/img/151063767_429005728336484_2086052602840462546_n.png);</st
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">  font-size: 17px;</string>
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Se connecter à Smart Police Station</string>
@@ -117,7 +117,7 @@ image: url(:/image/img/151063767_429005728336484_2086052602840462546_n.png);</st
       <rect>
        <x>170</x>
        <y>130</y>
-       <width>251</width>
+       <width>341</width>
        <height>31</height>
       </rect>
      </property>
@@ -139,7 +139,7 @@ image: url(:/image/img/151063767_429005728336484_2086052602840462546_n.png);</st
       <rect>
        <x>170</x>
        <y>200</y>
-       <width>261</width>
+       <width>341</width>
        <height>31</height>
       </rect>
      </property>
@@ -165,9 +165,9 @@ image: url(:/image/img/151063767_429005728336484_2086052602840462546_n.png);</st
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>250</x>
-       <y>270</y>
-       <width>101</width>
+       <x>300</x>
+       <y>280</y>
+       <width>161</width>
        <height>41</height>
       </rect>
      </property>
@@ -194,22 +194,35 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
      </property>
      <property name="icon">
       <iconset resource="resource.qrc">
-       <normaloff>:/img/icons8-police-badge-100.png</normaloff>:/img/icons8-police-badge-100.png</iconset>
+       <normaloff>:/image/img/lock.png</normaloff>:/image/img/lock.png</iconset>
      </property>
      <property name="iconSize">
       <size>
-       <width>20</width>
-       <height>20</height>
+       <width>40</width>
+       <height>35</height>
       </size>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="plainTextEdit">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>40</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/image/img/authentification.png);</string>
      </property>
     </widget>
     <widget class="QPlainTextEdit" name="plainTextEdit_2">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>10</y>
-       <width>81</width>
-       <height>81</height>
+       <x>-10</x>
+       <y>0</y>
+       <width>104</width>
+       <height>71</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -219,27 +232,27 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
     <widget class="QPlainTextEdit" name="plainTextEdit_3">
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>100</x>
        <y>120</y>
        <width>41</width>
        <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-image: url(:/img/police (1).png);</string>
+      <string notr="true">border-image: url(:/image/img/user.png);</string>
      </property>
     </widget>
     <widget class="QPlainTextEdit" name="plainTextEdit_4">
      <property name="geometry">
       <rect>
-       <x>100</x>
-       <y>200</y>
-       <width>51</width>
+       <x>90</x>
+       <y>190</y>
+       <width>61</width>
        <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">border-image: url(:/img/handcuffs (1).png);</string>
+      <string notr="true">border-image: url(:/image/img/password.png);</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_errur">
@@ -258,9 +271,9 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
     <widget class="QPushButton" name="pushButton1">
      <property name="geometry">
       <rect>
-       <x>370</x>
-       <y>270</y>
-       <width>81</width>
+       <x>480</x>
+       <y>280</y>
+       <width>161</width>
        <height>41</height>
       </rect>
      </property>
@@ -287,38 +300,15 @@ background:qlineargradient(spread:pad, x1:0.457286, y1:0.381, x2:0.508, y2:1, st
      </property>
      <property name="icon">
       <iconset resource="resource.qrc">
-       <normaloff>:/img/icons8-police-badge-100.png</normaloff>:/img/icons8-police-badge-100.png</iconset>
+       <normaloff>:/image/img/lock.png</normaloff>:/image/img/lock.png</iconset>
      </property>
      <property name="iconSize">
       <size>
-       <width>20</width>
-       <height>20</height>
+       <width>40</width>
+       <height>35</height>
       </size>
      </property>
     </widget>
-    <widget class="QPlainTextEdit" name="plainTextEdit_5">
-     <property name="geometry">
-      <rect>
-       <x>-10</x>
-       <y>0</y>
-       <width>721</width>
-       <height>421</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-image: url(:/img/policeman-writing-report-wearing-uniform-cop-guard-brick-background_48369-15138.jpg);</string>
-     </property>
-    </widget>
-    <zorder>plainTextEdit_5</zorder>
-    <zorder>label</zorder>
-    <zorder>user</zorder>
-    <zorder>password</zorder>
-    <zorder>pushButton</zorder>
-    <zorder>plainTextEdit_2</zorder>
-    <zorder>plainTextEdit_3</zorder>
-    <zorder>plainTextEdit_4</zorder>
-    <zorder>label_errur</zorder>
-    <zorder>pushButton1</zorder>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

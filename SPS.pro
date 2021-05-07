@@ -25,7 +25,6 @@ CONFIG += c++11
 SOURCES += \
     acceuil.cpp \
     accident.cpp \
-    arduino.cpp \
     assistance.cpp \
     barchart.cpp \
     citoyen.cpp \
@@ -52,7 +51,6 @@ SOURCES += \
 HEADERS += \
     acceuil.h \
     accident.h \
-    arduino.h \
     assistance.h \
     citoyen.h \
     conge.h \
